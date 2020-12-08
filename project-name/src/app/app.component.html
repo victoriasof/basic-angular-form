@@ -14,20 +14,22 @@
 
 <h3>Friend book</h3>
 
-<form action>
+{{ friendModel | json }}
+
+<form action="" #formName="ngForm">
   <label for="fname">First name: </label><br>
-  <input type="text" id="fname" name="fname"><br>
+  <input #fname="ngModel" [(ngModel)]="friendModel.fname" type="text" id="fname" name="fname"><br>
 
   <label for="lname">Last name: </label><br>
-  <input type="text" id="lname" name="lname"><br>
+  <input #lname="ngModel" [(ngModel)]="friendModel.lname" type="text" id="lname" name="lname"><br>
 
   <label for="email">Email: </label><br>
-  <input type="text" id="email" name="email"><br>
+  <input #email="ngModel" [(ngModel)]="friendModel.email" type="text" id="email" name="email"><br>
 
-  <label for="phone">Phone number: </label><br>
-  <input type="number" id="phone" name="phone"><br>
+  <label for="phoneNumber">Phone number: </label><br>
+  <input #phone="ngModel" [(ngModel)]="friendModel.phoneNumber" type="numberNumber" id="phoneNumber" name="phoneNumber"><br>
 
-  <label for="language">Favourite language: </label><br>
+  <label for="languages">Favourite language: </label><br>
 
   <!--
   <select name="languages" id="language">
@@ -37,7 +39,7 @@
   </select><br>
   -->
 
-  <select [(ngModel)]="languages">
+  <select [(ngModel)]="languages" id="languages" name="languages">
     <option *ngFor="let language of languages" [ngValue]="language">{{language.name}}</option>
   </select><br>
 
