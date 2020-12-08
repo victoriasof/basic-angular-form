@@ -9,18 +9,7 @@ import {Component} from '@angular/core';
 export class AppComponent {
   title = 'project-name';
   /*selected;*/
-  languages = [
-    {
-      name: 'Javascript'
-    },
-    {
-      name: 'PHP'
-    },
-
-    {
-      name: 'Python'
-    }
-  ];
+  languages = ['Javascript', 'PHP', 'Python'];
 
   /*friendModel = new Friend ("","","","","")*/
 

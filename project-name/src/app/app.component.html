@@ -27,7 +27,7 @@
   <input #email="ngModel" [(ngModel)]="friendModel.email" type="text" id="email" name="email"><br>
 
   <label for="phoneNumber">Phone number: </label><br>
-  <input #phone="ngModel" [(ngModel)]="friendModel.phoneNumber" type="numberNumber" id="phoneNumber" name="phoneNumber"><br>
+  <input #phone="ngModel" [(ngModel)]="friendModel.phoneNumber" type="number" id="phoneNumber" name="phoneNumber"><br>
 
   <label for="languages">Favourite language: </label><br>
 
@@ -39,16 +39,13 @@
   </select><br>
   -->
 
-  <select [(ngModel)]="languages" id="languages" name="languages">
-    <option *ngFor="let language of languages" [ngValue]="language">{{language.name}}</option>
+  <select #language="ngModel" [(ngModel)]="friendModel.language" id="languages" name="languages">
+    <option *ngFor="let language of languages" [ngValue]="language">{{language}}</option>
   </select><br>
 
 
   <input type="submit" value="Submit">
 </form>
-
-
-
 
 
 <!-- Optional JavaScript -->
