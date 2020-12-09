@@ -13,5 +13,10 @@ export class AppComponent {
 
   friendModel = new Friend ('', '', '', '', '');
 
+  addFriend(): void {
+      console.log(this.friendModel);
+
+  }
+
 }
 

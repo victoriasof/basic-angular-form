@@ -16,7 +16,7 @@
 
 {{ friendModel | json }}
 
-<form method="POST" action="" #formName="ngForm" novalidate>
+<form method="POST" action="" #formName="ngForm" novalidate (ngSubmit)="addFriend()">
   <label for="fname">First name: </label><br>
   <input #fname="ngModel" [(ngModel)]="friendModel.fname" required="required" class="form-control"
          [class.error]="fname.invalid && fname.touched" pattern="/^[a-z ,.'-]+$/i" type="text" id="fname" name="fname" ><br>
