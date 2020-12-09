@@ -16,26 +16,22 @@
 
 {{ friendModel | json }}
 
-<form action="" #formName="ngForm">
+<form method="POST" action="" #formName="ngForm" novalidate>
   <label for="fname">First name: </label><br>
   <input #fname="ngModel" [(ngModel)]="friendModel.fname" required="required" class="form-control"
-         [class.error]="fname.invalid && fname.touched" pattern="/^[a-z ,.'-]+$/i"
-         type="text" id="fname" name="fname" ><br>
+         [class.error]="fname.invalid && fname.touched" pattern="/^[a-z ,.'-]+$/i" type="text" id="fname" name="fname" ><br>
 
   <label for="lname">Last name: </label><br>
   <input #lname="ngModel" [(ngModel)]="friendModel.lname" required="required" class="form-control"
-         [class.error]="lname.invalid && lname.touched" pattern="/^[a-z ,.'-]+$/i"
-         type="text" id="lname" name="lname"><br>
+         [class.error]="lname.invalid && lname.touched" pattern="/^[a-z ,.'-]+$/i" type="text" id="lname" name="lname"><br>
 
   <label for="email">Email: </label><br>
   <input #email="ngModel" [(ngModel)]="friendModel.email" required="required" class="form-control"
-         [class.error]="email.invalid && email.touched" pattern="[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}"
-         type="text" id="email" name="email"><br>
+         [class.error]="email.invalid && email.touched" pattern="[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}" type="text" id="email" name="email"><br>
 
   <label for="phoneNumber">Phone number: </label><br>
   <input #phone="ngModel" [(ngModel)]="friendModel.phoneNumber" required="required" class="form-control"
-         [class.error]="phone.invalid && phone.touched" pattern="^([()\- x+]*\d[()\- x+]*){4,16}$"
-         type="number" id="phoneNumber" name="phoneNumber"><br>
+         [class.error]="phone.invalid && phone.touched" pattern="^([()\- x+]*\d[()\- x+]*){4,16}$" type="number" id="phoneNumber" name="phoneNumber"><br>
 
   <label for="languages">Favourite language: </label><br>
 
@@ -52,7 +48,7 @@
     <option *ngFor="let language of languages" [ngValue]="language">{{language}}</option>
   </select><br>
 
-  <input type="submit" value="Submit">
+  <button [disabled]="formName.form.invalid" type="button">Submit</button>
 </form>
 
 
