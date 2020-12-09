@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-/*import {Friend} from "./friend";*/
+import {Friend} from './friend';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,7 @@ export class AppComponent {
   /*selected;*/
   languages = ['Javascript', 'PHP', 'Python'];
 
-  /*friendModel = new Friend ("","","","","")*/
+  friendModel = new Friend ('', '', '', '', '');
 
 }
 
