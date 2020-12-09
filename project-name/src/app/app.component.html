@@ -18,16 +18,20 @@
 
 <form action="" #formName="ngForm">
   <label for="fname">First name: </label><br>
-  <input #fname="ngModel" [(ngModel)]="friendModel.fname" type="text" id="fname" name="fname"><br>
+  <input #fname="ngModel" [(ngModel)]="friendModel.fname" required="required" class="form-control"
+         [class.error]="fname.invalid && fname.touched" type="text" id="fname" name="fname" ><br>
 
   <label for="lname">Last name: </label><br>
-  <input #lname="ngModel" [(ngModel)]="friendModel.lname" type="text" id="lname" name="lname"><br>
+  <input #lname="ngModel" [(ngModel)]="friendModel.lname" required="required" class="form-control"
+         [class.error]="lname.invalid && lname.touched" type="text" id="lname" name="lname"><br>
 
   <label for="email">Email: </label><br>
-  <input #email="ngModel" [(ngModel)]="friendModel.email" type="text" id="email" name="email"><br>
+  <input #email="ngModel" [(ngModel)]="friendModel.email" required="required" class="form-control"
+         [class.error]="email.invalid && email.touched" type="text" id="email" name="email"><br>
 
   <label for="phoneNumber">Phone number: </label><br>
-  <input #phone="ngModel" [(ngModel)]="friendModel.phoneNumber" type="number" id="phoneNumber" name="phoneNumber"><br>
+  <input #phone="ngModel" [(ngModel)]="friendModel.phoneNumber" required="required" class="form-control"
+         [class.error]="phone.invalid && phone.touched" type="number" id="phoneNumber" name="phoneNumber"><br>
 
   <label for="languages">Favourite language: </label><br>
 
@@ -39,10 +43,10 @@
   </select><br>
   -->
 
-  <select #language="ngModel" [(ngModel)]="friendModel.language" id="languages" name="languages">
+  <select #language="ngModel" [(ngModel)]="friendModel.language" required="required"
+          class="form-control" id="languages" name="languages">
     <option *ngFor="let language of languages" [ngValue]="language">{{language}}</option>
   </select><br>
-
 
   <input type="submit" value="Submit">
 </form>
