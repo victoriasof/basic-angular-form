@@ -16,10 +16,10 @@ export class AppComponent implements OnInit {
 
   friendModel = new Friend ('', '', '', '', '');
 
-  private AddFriendsService: any;
+  // private AddFriendsService: any;
   public allFriends: any = [];
 
-  constructor(AddFriendsService: AddFriendService) {
+  constructor(private AddFriendsService: AddFriendService) {
     // this.AddFriendsService = AddFriendsService;
   }
   onSubmit(): void {
