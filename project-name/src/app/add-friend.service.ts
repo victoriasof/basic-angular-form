@@ -13,7 +13,7 @@ export class AddFriendService {
 
   constructor(public http: HttpClient) { }
 
-addFriend(friend: Friend): Observable<Friend>{
+postFriend(friend: Friend): Observable<Friend>{
   return this.http.post<Friend>(this.url, friend);
 }
 

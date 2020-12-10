@@ -22,11 +22,22 @@ export class AppComponent {
   addFriend(): void {
 
       // observable.subscribe(data => it worked, error => it didn't work)
-
-      this.AddFriendsService.addFriend(this.friendModel).subscribe((data: Friend) => console.log(data));
+      this.AddFriendsService.postFriend(this.friendModel)
+        .subscribe(
+          success => console.log("it worked"), //this.getAllFriends('http://localhost:6969/allFriends'),
+          error => console.log(error)
+        );
+        /*
+        .subscribe(
+          (data: Friend) => console.log(data));
       console.log(this.friendModel);
 
+    this.formSubmitService.postRequest(this.friendModel)
+      .subscribe(
+        success => this.getAllFriends('http://localhost:6969/allFriends'),
+        error => console.log(error)
+      );
+      */
   }
-
 }
 

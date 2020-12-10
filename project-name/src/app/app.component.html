@@ -19,15 +19,15 @@
 <form method="POST" action="" #formName="ngForm" novalidate (ngSubmit)="addFriend()">
   <label for="fname">First name: </label><br>
   <input #fname="ngModel" [(ngModel)]="friendModel.fname" required="required" class="form-control"
-         [class.error]="fname.invalid && fname.touched" pattern="/^[a-z ,.'-]+$/i" type="text" id="fname" name="fname" ><br>
+         [class.error]="fname.invalid && fname.touched" pattern="^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$" type="text" id="fname" name="fname" ><br>
 
   <label for="lname">Last name: </label><br>
   <input #lname="ngModel" [(ngModel)]="friendModel.lname" required="required" class="form-control"
-         [class.error]="lname.invalid && lname.touched" pattern="/^[a-z ,.'-]+$/i" type="text" id="lname" name="lname"><br>
+         [class.error]="lname.invalid && lname.touched" pattern="^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$" type="text" id="lname" name="lname"><br>
 
   <label for="email">Email: </label><br>
   <input #email="ngModel" [(ngModel)]="friendModel.email" required="required" class="form-control"
-         [class.error]="email.invalid && email.touched" pattern="[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}" type="text" id="email" name="email"><br>
+         [class.error]="email.invalid && email.touched" pattern="^[0-9a-zA-Z|-|.]+@[0-9a-zA-Z|-]+.[0-9a-zA-Z|-]+$" type="text" id="email" name="email"><br>
 
   <label for="phoneNumber">Phone number: </label><br>
   <input #phone="ngModel" [(ngModel)]="friendModel.phoneNumber" required="required" class="form-control"
