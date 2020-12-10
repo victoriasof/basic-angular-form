@@ -9,12 +9,12 @@ import {Friend} from './friend';
 })
 export class AddFriendService {
 
-  url = 'http://localhost:9000';
+  url = 'http://localhost:9000/postFriend';
 
-  constructor(public http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-postFriend(friend: Friend): Observable<Friend>{
-  return this.http.post<Friend>(this.url, friend);
+postFriend(friend: Friend): Observable<any>{
+  return this.http.post<any>(this.url, friend);
 }
 
 }

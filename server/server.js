@@ -24,9 +24,18 @@ app.get('/', function (request, response) {
     response.send('Hello from server');
 });
 
+app.get('/allFriends', function(request, response){
+    response.status(200).send(allFriends);
+});
+
 app.post('/', function (request, response) {
     response.status(200).send({"message": "Data received"});
 });
 
+app.post('/postFriend', function(request, response){
+   allFriends.push(request.body);
+   response.status(200).send({"message": "Data received"});
+
+});
 
 app.listen(PORT, function () {});
