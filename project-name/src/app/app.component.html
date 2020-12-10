@@ -51,6 +51,16 @@
   <button [disabled]="formName.form.invalid" type="button">Submit</button>
 </form>
 
+<form method ="GET">
+  <div *ngFor="let friend of allFriends"></div>
+    <ul>
+      <li>Friend: {{ fname }}{{ lname }} </li>
+      <li>Email: {{ email }} </li>
+      <li>Phone: {{ phone }}</li>
+      <li>Favorite language: {{ language}}</li>
+    </ul>
+</form>
+
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
