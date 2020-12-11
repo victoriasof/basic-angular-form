@@ -38,12 +38,13 @@
 
 </form>
 
-<!--
-<div *ngFor="let friend of allFriends"></div>
+<div *ngFor="let friend of allFriends;">
 <ul>
-  <li>Friend: {{ fname }}{{ lname }} </li>
-  <li>Email: {{ email }} </li>
-  <li>Phone: {{ phone }}</li>
-  <li>Favorite language: {{ language}}</li>
+
+  <li>Friend: {{ friend.fname }}{{ friend.lname }} </li>
+  <li>Email: {{ friend.email }} </li>
+  <li>Phone: {{ friend.phoneNumber }}</li>
+  <li>Favorite language: {{ friend.language}}</li>
 </ul>
--->
+
+</div>

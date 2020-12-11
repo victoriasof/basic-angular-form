@@ -16,7 +16,9 @@ export class AppComponent implements OnInit {
 
   friendModel = new Friend ('', '', '', '', '');
 
-  // private AddFriendsService: any;
+  // REMOVED private AddFriendsService: any;
+  // added private AddFriendsService in constructor
+
   public allFriends: any = [];
 
   constructor(private AddFriendsService: AddFriendService) {
@@ -31,7 +33,6 @@ export class AppComponent implements OnInit {
         (error: any) => console.log(error)
       );
   }
-  /*
   async getAllFriends(url: string): Promise<any>{
     const response = await fetch(url, {
       method: 'GET',
@@ -44,10 +45,9 @@ export class AppComponent implements OnInit {
     this.allFriends = data;
     return data;
   }
-  */
   ngOnInit(): any{
     console.log('something');
-    // this.getAllFriends('http://localhost:9000/allFriends');
+    this.getAllFriends('http://localhost:9000/allFriends');
   }
 }
 
